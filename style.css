@@ -36,6 +36,8 @@ body{
     align-items: center;
     font-family: Dance;
     letter-spacing: 2px;
+    text-wrap: nowrap;
+    min-width: 202px;
 }
 .nav-bar-right{
 flex-grow: 1;
@@ -55,4 +57,59 @@ align-items: center;
     font-size: 18px;
     text-decoration: none;
     text-transform: capitalize;
+}
+.menu-bar{
+    display: none;
+    position: relative;
+}
+.menu-bar>input{
+    height: 30px;
+    width: 30px;
+    appearance: none;
+    position: absolute;
+    /* background-color: red; */
+    /* border: 2px solid #fff; */
+    top: -3px;
+}
+
+.all-menu{
+display: none ;
+}
+input:checked~.all-menu{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: absolute;
+    left: -100px;
+    top: 50px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    div{
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+    }
+}
+
+
+
+@media screen  and (max-width:768px){
+    .nav-bar-right>div>div>a:not(.menu-bar){
+        display: none;
+    }
+    .menu-bar{
+        display: block;
+        font-size: 22px;
+    }
+}
+
+@media screen  and (max-width:434px){
+.nav-bar-left{
+    min-width: 100px;
+    width: 80%;
+    font-size: 12px;
+}
+
 }
